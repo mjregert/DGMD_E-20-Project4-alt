@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JQuery Mobile Project</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+    </head>
+
+    <body>
+        <section data-role="page" id="home">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Developer's Best Friend</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lorem">Lorem Ipsum Generator</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main data-role="main" class="ui-content">
+                <div data-role="page">
+                    <h2>Random User Generator</h2>
+                    <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
+                    <a href="/users/create">Create a random user for your application...</a>
+                </div>
+                <div id="green">
+                    <h2>Random Password Generator</h2>
+                    <p>Create a random password for your applications. Like Lorem Ipsum, but for passwords.</p>
+                    <a href="/passwords/create">Create a random password for your application...</a>
+                </div>
+            </main>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                &copy; 2016
+            </footer>
+        </section>
+
+
+
+        <section data-role="page" id="lorem">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Developer's Best Friend</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lorem">Lorem Ipsum Generator</a></li>
+                    </ul>
+                </nav>
+                <h2>Random Text Generator</h2>
+            </header>
+            <main data-role="main">
+                <p>In publishing and graphic design, lorem ipsum is a placeholder text commonly used to
+                    demonstrate the graphic elements of a document or visual presentation. By replacing
+                    the distraction of meaningful content with filler text of scrambled Latin it allows
+                    viewers to focus on graphical elements such as font, typography, and layout.</p>
+                <form method='POST' action='/lorem/create'>
+                    <fieldset>
+                        <legend>Text Generator Options:</legend>
+                        <label>Average length of a paragraph:</label><br>
+                        <span>
+                            <input type="radio"
+                                   name="paragraphLength"
+                                   value="short"
+                            />
+                            <label style="margin-right: 2em;">Short</label>
+                            <br>
+                            <input type="radio"
+                                   name="paragraphLength"
+                                   value="medium"
+                            />
+                            <label style="margin-right: 2em;">Medium</label>
+                            <br>
+                            <input type="radio"
+                                   name="paragraphLength"
+                                   value="long"
+                            />
+                            <label>Long</label>
+                            <br>
+                            <input type="radio"
+                                   name="paragraphLength"
+                                   value="verylong"
+                            />
+                            <label>Very Long</label>
+                            <br>
+                        </span>
+                        <span>
+                            <label>Number of Paragraphs (min 1, max 9):</label>
+                            <input type="number"
+                                   name="paragraphCount"
+                                   value="4"
+                            />
+                        </span>
+                        <span>{{ csrf_field() }}</span>
+                        <br>
+                        <br>
+                        <span>
+                            <label><em>Click submit to generate random text with the parameters above.</em></label>
+                            <input type="submit" value="Submit">
+                        </span>
+                    </fieldset>
+                </form>
+                <h2>Results Below</h2> {!! $output or '' !!}
+            </main>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                &copy; 2016
+            </footer>
+        </section>
+
+
+
+
+
+
+
+
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </body>
+
+</html>
