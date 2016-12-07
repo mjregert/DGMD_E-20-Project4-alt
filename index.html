@@ -91,9 +91,36 @@
                 <h2>Random User Generator</h2>
             </header>
             <main data-role="main">
-                <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
-                <a href="/users/create">Create a random user for your application...</a>
+
+
+                <p>In software development and testing, some applications may require users to be created
+                    and to have user data to develop to or test the apploication. This tool generates
+                    random users. Like Lorem Ipsum, but for people.</p>
+                <form method='POST' action='/lorem/create'>
+                    <div class="ui-field-contain">
+                        <label for="slider-1">Number of users:</label>
+                        <input type="range" name="userCount" id="userCount" value="1" min="1" max="9" data-highlight="true">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="includeEmailAddress">Include Email Address:</label>
+                        <select name="includeEmailAddress" id="includeEmailAddress" data-role="slider" data-mini="true">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="includeProfile">Include Profile:</label>
+                        <select name="includeProfile" id="includeProfile" data-role="slider" data-mini="true">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <button name="submit" type="submit" class="ui-btn ui-shadow ui-corner-all">Submit</button>
+                </form>
             </main>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <p>&copy; 2016 - Michael Regert</p>
+            </footer>
         </section>
         <!-- ************************************************************* -->
         <section data-role="page" id="password">
@@ -110,14 +137,33 @@
                 <h2>Random Password Generator</h2>
             </header>
             <main data-role="main">
-                <p>Create a random password for your applications. Like Lorem Ipsum, but for passwords.</p>
-                <a href="/passwords/create">Create a random password for your application...</a>
+                <p>Create a random password.</p>
+                <form method='POST' action='/lorem/create'>
+
+
+                    <div class="ui-field-contain">
+                        <label for="wordCount">Number of words:</label>
+                        <input type="number" name="wordCount" id="wordCount" value="4" min="1" max="9">
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="includeNumber">
+                            <input type="checkbox" name="includeNumber" id="includeNumber" class="custom">
+                            Include a number
+                        </label>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="includeSymbol">
+                            <input type="checkbox" name="includeSymbol" id="includeSymbol" class="custom">
+                            Include a symbol
+                        </label>
+                    </div>
+                    <button name="submit" type="submit" class="ui-btn ui-shadow ui-corner-all">Submit</button>
+                </form>
             </main>
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <p>&copy; 2016 - Michael Regert</p>
+            </footer>
         </section>
-
-
-
-
 
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
