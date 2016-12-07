@@ -11,6 +11,7 @@
     </head>
 
     <body>
+        <!-- ************************************************************* -->
         <section data-role="page" id="home">
             <header data-role="header" data-theme="b" data-position="fixed">
                 <h1>Developer's Best Friend</h1>
@@ -18,28 +19,18 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#lorem">Lorem Ipsum Generator</a></li>
+                        <li><a href="#users">Random User Generator</a></li>
+                        <li><a href="#password">Random Password Generator</a></li>
                     </ul>
                 </nav>
             </header>
             <main data-role="main" class="ui-content">
-                <div data-role="page">
-                    <h2>Random User Generator</h2>
-                    <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
-                    <a href="/users/create">Create a random user for your application...</a>
-                </div>
-                <div id="green">
-                    <h2>Random Password Generator</h2>
-                    <p>Create a random password for your applications. Like Lorem Ipsum, but for passwords.</p>
-                    <a href="/passwords/create">Create a random password for your application...</a>
-                </div>
             </main>
             <footer data-role="footer" data-theme="b" data-position="fixed">
-                &copy; 2016
+                <p>&copy; 2016 - Michael Regert</p>
             </footer>
         </section>
-
-
-
+        <!-- ************************************************************* -->
         <section data-role="page" id="lorem">
             <header data-role="header" data-theme="b" data-position="fixed">
                 <h1>Developer's Best Friend</h1>
@@ -47,6 +38,8 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#lorem">Lorem Ipsum Generator</a></li>
+                        <li><a href="#users">Random User Generator</a></li>
+                        <li><a href="#password">Random Password Generator</a></li>
                     </ul>
                 </nav>
                 <h2>Random Text Generator</h2>
@@ -57,61 +50,70 @@
                     the distraction of meaningful content with filler text of scrambled Latin it allows
                     viewers to focus on graphical elements such as font, typography, and layout.</p>
                 <form method='POST' action='/lorem/create'>
-                    <fieldset>
-                        <legend>Text Generator Options:</legend>
-                        <label>Average length of a paragraph:</label><br>
-                        <span>
-                            <input type="radio"
-                                   name="paragraphLength"
-                                   value="short"
-                            />
-                            <label style="margin-right: 2em;">Short</label>
-                            <br>
-                            <input type="radio"
-                                   name="paragraphLength"
-                                   value="medium"
-                            />
-                            <label style="margin-right: 2em;">Medium</label>
-                            <br>
-                            <input type="radio"
-                                   name="paragraphLength"
-                                   value="long"
-                            />
-                            <label>Long</label>
-                            <br>
-                            <input type="radio"
-                                   name="paragraphLength"
-                                   value="verylong"
-                            />
-                            <label>Very Long</label>
-                            <br>
-                        </span>
-                        <span>
-                            <label>Number of Paragraphs (min 1, max 9):</label>
-                            <input type="number"
-                                   name="paragraphCount"
-                                   value="4"
-                            />
-                        </span>
-                        <span>{{ csrf_field() }}</span>
-                        <br>
-                        <br>
-                        <span>
-                            <label><em>Click submit to generate random text with the parameters above.</em></label>
-                            <input type="submit" value="Submit">
-                        </span>
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-field-contain">
+                        <legend>Average length of a paragraph:</legend>
+                        <label for="short">
+                            <input type="radio" name="paragraphLength" value="short" id="short">
+                            Short
+                        </label>
+                        <label for="medium">
+                            <input type="radio" name="paragraphLength" value="medium" id="medium">
+                            Medium
+                        </label>
+                        <label for="long">
+                            <input type="radio" name="paragraphLength" value="long" id="long">
+                            Long
+                        </label>
                     </fieldset>
+                    <div class="ui-field-contain">
+                        <label for="slider-1">Number of paragraphs:</label>
+                        <input type="range" name="paragraphCount" id="paragraphCount" value="4" min="1" max="9" data-highlight="true">
+                    </div>
+                    <button name="submit" type="submit" class="ui-btn ui-shadow ui-corner-all">Submit</button>
                 </form>
-                <h2>Results Below</h2> {!! $output or '' !!}
             </main>
             <footer data-role="footer" data-theme="b" data-position="fixed">
-                &copy; 2016
+                <p>&copy; 2016 - Michael Regert</p>
             </footer>
         </section>
-
-
-
-
+        <!-- ************************************************************* -->
+        <section data-role="page" id="users">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Developer's Best Friend</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lorem">Lorem Ipsum Generator</a></li>
+                        <li><a href="#users">Random User Generator</a></li>
+                        <li><a href="#password">Random Password Generator</a></li>
+                    </ul>
+                </nav>
+                <h2>Random User Generator</h2>
+            </header>
+            <main data-role="main">
+                <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
+                <a href="/users/create">Create a random user for your application...</a>
+            </main>
+        </section>
+        <!-- ************************************************************* -->
+        <section data-role="page" id="password">
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Developer's Best Friend</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lorem">Lorem Ipsum Generator</a></li>
+                        <li><a href="#users">Random User Generator</a></li>
+                        <li><a href="#password">Random Password Generator</a></li>
+                    </ul>
+                </nav>
+                <h2>Random Password Generator</h2>
+            </header>
+            <main data-role="main">
+                <p>Create a random password for your applications. Like Lorem Ipsum, but for passwords.</p>
+                <a href="/passwords/create">Create a random password for your application...</a>
+            </main>
+        </section>
 
 
 
