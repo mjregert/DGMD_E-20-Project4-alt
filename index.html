@@ -6,50 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>JQuery Mobile Project</title>
+        <link rel="stylesheet" href="themes/Assign4Theme.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" href="css/custom.css" />
     </head>
 
     <body>
         <!-- ************************************************************* -->
-        <section data-role="page" id="home">
-            <header data-role="header" data-theme="b" data-position="fixed">
-                <h1>Developer's Best Friend</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#lorem">Lorem Ipsum Generator</a></li>
-                        <li><a href="#users">Random User Generator</a></li>
-                        <li><a href="#password">Random Password Generator</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <main data-role="main" class="ui-content">
-            </main>
-            <footer data-role="footer" data-theme="b" data-position="fixed">
-                <p>&copy; 2016 - Michael Regert</p>
-            </footer>
-        </section>
-        <!-- ************************************************************* -->
         <section data-role="page" id="lorem">
-            <header data-role="header" data-theme="b" data-position="fixed">
+            <header data-role="header" data-theme="c" data-position="fixed">
                 <h1>Developer's Best Friend</h1>
-                <nav>
+                <div data-role="navbar">
                     <ul>
-                        <li><a href="#home">Home</a></li>
                         <li><a href="#lorem">Lorem Ipsum Generator</a></li>
                         <li><a href="#users">Random User Generator</a></li>
                         <li><a href="#password">Random Password Generator</a></li>
                     </ul>
-                </nav>
-                <h2>Random Text Generator</h2>
+                </div>
             </header>
             <main data-role="main">
+                <h2>Random Text Generator</h2>
                 <p>In publishing and graphic design, lorem ipsum is a placeholder text commonly used to
                     demonstrate the graphic elements of a document or visual presentation. By replacing
                     the distraction of meaningful content with filler text of scrambled Latin it allows
                     viewers to focus on graphical elements such as font, typography, and layout.</p>
-                <form method='POST' action='/lorem/create'>
+                <form>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-field-contain">
                         <legend>Average length of a paragraph:</legend>
                         <label for="short">
@@ -72,31 +54,28 @@
                     <button name="submit" type="submit" class="ui-btn ui-shadow ui-corner-all">Submit</button>
                 </form>
             </main>
-            <footer data-role="footer" data-theme="b" data-position="fixed">
+            <footer data-role="footer" data-theme="c" data-position="fixed">
                 <p>&copy; 2016 - Michael Regert</p>
             </footer>
         </section>
         <!-- ************************************************************* -->
         <section data-role="page" id="users">
-            <header data-role="header" data-theme="b" data-position="fixed">
+            <header data-role="header" data-theme="c" data-position="fixed">
                 <h1>Developer's Best Friend</h1>
-                <nav>
+                <div data-role="navbar">
                     <ul>
-                        <li><a href="#home">Home</a></li>
                         <li><a href="#lorem">Lorem Ipsum Generator</a></li>
                         <li><a href="#users">Random User Generator</a></li>
                         <li><a href="#password">Random Password Generator</a></li>
                     </ul>
-                </nav>
-                <h2>Random User Generator</h2>
+                </div>
             </header>
             <main data-role="main">
-
-
+                <h2>Random User Generator</h2>
                 <p>In software development and testing, some applications may require users to be created
                     and to have user data to develop to or test the apploication. This tool generates
                     random users. Like Lorem Ipsum, but for people.</p>
-                <form method='POST' action='/lorem/create'>
+                <form>
                     <div class="ui-field-contain">
                         <label for="slider-1">Number of users:</label>
                         <input type="range" name="userCount" id="userCount" value="1" min="1" max="9" data-highlight="true">
@@ -118,29 +97,26 @@
                     <button name="submit" type="submit" class="ui-btn ui-shadow ui-corner-all">Submit</button>
                 </form>
             </main>
-            <footer data-role="footer" data-theme="b" data-position="fixed">
+            <footer data-role="footer" data-theme="c" data-position="fixed">
                 <p>&copy; 2016 - Michael Regert</p>
             </footer>
         </section>
         <!-- ************************************************************* -->
         <section data-role="page" id="password">
-            <header data-role="header" data-theme="b" data-position="fixed">
+            <header data-role="header" data-theme="c" data-position="fixed">
                 <h1>Developer's Best Friend</h1>
-                <nav>
+                <div data-role="navbar">
                     <ul>
-                        <li><a href="#home">Home</a></li>
                         <li><a href="#lorem">Lorem Ipsum Generator</a></li>
                         <li><a href="#users">Random User Generator</a></li>
                         <li><a href="#password">Random Password Generator</a></li>
                     </ul>
-                </nav>
-                <h2>Random Password Generator</h2>
+                </div>
             </header>
             <main data-role="main">
+                <h2>Random Password Generator</h2>
                 <p>Create a random password.</p>
-                <form method='POST' action='/lorem/create'>
-
-
+                <form>
                     <div class="ui-field-contain">
                         <label for="wordCount">Number of words:</label>
                         <input type="number" name="wordCount" id="wordCount" value="4" min="1" max="9">
@@ -160,13 +136,13 @@
                     <button name="submit" type="submit" class="ui-btn ui-shadow ui-corner-all">Submit</button>
                 </form>
             </main>
-            <footer data-role="footer" data-theme="b" data-position="fixed">
+            <footer data-role="footer" data-theme="c" data-position="fixed">
                 <p>&copy; 2016 - Michael Regert</p>
             </footer>
         </section>
-
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 
 </html>

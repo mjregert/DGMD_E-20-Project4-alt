@@ -1,5 +1,29 @@
 /* Styles */
+
 #home, #lorem, #users, #password {
-    padding: 2%;
-    width: 96%;
+    padding: 4%;
+    width: 92%;
+}
+
+.ui-btn[name="submit"] {
+    color: white;
+    background-color: blue;
+    font-weight: normal;
+}
+
+@media only screen and (min-width: 769px) {
+    /* On desktops, make the button 150px */
+    .ui-btn[name="submit"] {
+        width: 150px;
+    }
+}
+
+
+/* Mobile Phone */
+
+@media only screen and (max-width: 768px) {
+    /* On mobile devices, make the button go all the way across the screen */
+    .ui-btn[name="submit"] {
+        width: 100%;
+    }
 }
