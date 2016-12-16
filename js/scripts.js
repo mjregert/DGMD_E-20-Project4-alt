@@ -4,6 +4,12 @@ $(document).ready(function() {
     });
 
     $( "body" ).on( "pagechange", function( event ) {
-        alert("Navigation Changed");
+        $("main").css({'backgroundColor' : 'lightblue'});
+        $("main").fadeOut( 2000, function( event) {
+            $("main").fadeIn( 2000, function() {
+                $("main").css({'backgroundColor' : 'white'});
+                //done
+            });
+        });
     });
 }); // end ready

@@ -16,14 +16,17 @@
     .ui-btn[name="submit"] {
         width: 150px;
     }
+    form {
+        width: 500px;
+    }
 }
-
-
-/* Mobile Phone */
 
 @media only screen and (max-width: 768px) {
     /* On mobile devices, make the button go all the way across the screen */
     .ui-btn[name="submit"] {
+        width: 100%;
+    }
+    form {
         width: 100%;
     }
 }
